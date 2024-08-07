@@ -7,7 +7,6 @@
 **EQpolarity** package is a deep-learning-based package for determining earthquake first-motion polarity
 
 ## Reference
-Chen et al., 2023, Deep learning for P-wave first-motion polarity determination and its application in focal mechanism inversion.
 
 	Chen Y, Saad OM, Savvaidis A, Zhang F, Chen Y, Huang D, Li H, Zanjani FA, 2024, Deep learning for P-wave first-motion polarity determination and its application in focal mechanism inversion. IEEE Transactions on Geoscience and Remote Sensing, 62, 5917411.
 
