@@ -55,6 +55,7 @@ import datetime
 today=datetime.date.today()
 weightname='best_weigths_Binary_Texas_Transfer10_%s.weights.h5'%str(today)
 
+import tensorflow as tf
 from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint, ReduceLROnPlateau
 
 
