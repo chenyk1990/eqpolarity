@@ -41,6 +41,10 @@ print(cf_matrix)
 
 
 ## plotting confusion matrix
+from eqpolarity import plot_confusionmatrix
+
+plot_confusionmatrix(cf=cf_matrix,figname='Conf_Matrix_before_transferlearning')
+
 import seaborn as sn
 import matplotlib.pyplot as plt
 font = {'family' : 'normal',
@@ -48,7 +52,16 @@ font = {'family' : 'normal',
         'size'   : 16}
 plt.rc('font', **font)
 
-cf = cf_matrix
+# cf = cf_matrix
+
+import numpy as np
+cf=np.array([[13596,   947],
+       [  296,  8141]])
+
+#after:
+# cf=np.array([[14373,   170],
+#  [  158,  8279]])
+ 
 categories=['Up','Down']
 group_percentages = []
 counts = []
@@ -66,7 +79,7 @@ labels = np.asarray(labels).reshape(2, 2, order = 'F')
 fig = plt.figure(figsize=(10,7))
 sn.set(font_scale=2) # for label size
 sn.heatmap(percentages_matrix, annot = labels, fmt = '', xticklabels=categories, yticklabels = categories, cbar = False)
-fig.savefig('Conf_Matrix',bbox_inches='tight',transparent=True, dpi =100)
+fig.savefig('Conf_Matrix_texas_transferlearning',bbox_inches='tight',transparent=True, dpi =100)
 plt.show()
 
 
@@ -114,6 +127,11 @@ outtest = out
 outtest[outtest<thre]=0
 outtest[outtest>=thre]=1
 labtest = polall
+
+## print scores
 accuracy_score(labtest,outtest),precision_score(labtest,outtest, average='micro'),recall_score(labtest,outtest, average='micro'),f1_score(labtest,outtest, average='micro')
+accuracy_score(labtest,outtest),precision_score(labtest,outtest, average=None),recall_score(labtest,outtest, average=None),f1_score(labtest,outtest, average=None)
+accuracy_score(labtest,outtest),precision_score(labtest,outtest, average='macro'),recall_score(labtest,outtest, average='macro'),f1_score(labtest,outtest, average='macro')
 
-
+cf_matrix = confusion_matrix(labtest, outtest)
+print(cf_matrix)
