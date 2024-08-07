@@ -54,7 +54,7 @@ setup(
         "obspy",
         "tensorflow==2.14.0",
         "scikit-learn==1.2.2",
-        "seaborn==0.12.2"
+        "seaborn==0.13.2"
     ],
     python_requires='==3.11.7',
     extras_require={
