@@ -59,7 +59,7 @@ import tensorflow as tf
 from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint, ReduceLROnPlateau
 
 
-checkpoint = ModelCheckpoint(filepath='best_weigths_Binary_Texas_Transfer10.weights.h5',
+checkpoint = ModelCheckpoint(filepath=weightname,
                              monitor='val_acc',
                              mode = 'max',
                              verbose=1,
