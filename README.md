@@ -40,7 +40,7 @@ First set up the environment and install the dependency packages
 	conda create -n eqp python=3.11.7
 	conda activate eqp
 	conda install ipython notebook
-	pip install matplotlib==3.8.0 tensorflow==2.16.2 scikit-learn==1.2.2 seaborn==0.12.2
+	pip install matplotlib==3.8.0 tensorflow==2.14.2 scikit-learn==1.2.2 seaborn==0.12.2
 	
 Then install eqpolarity using the latest version
 
