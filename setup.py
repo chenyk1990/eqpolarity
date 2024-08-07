@@ -6,7 +6,6 @@
 # import os
 
 from setuptools import setup
-import numpy
 long_description = """
 Source code: https://github.com/chenyk1990/eqpolarity""".strip() 
 
@@ -16,10 +15,9 @@ def read(*names, **kwargs):
         os.path.join(os.path.dirname(__file__), *names),
         encoding=kwargs.get("encoding", "utf8")).read()
 
-# from numpy.distutils.core import setup 
 setup(
     name="eqpolarity",
-    version="0.0.0.1",
+    version="0.0.0.3",
     license='MIT License',
     description="EQpolarity package is a deep-learning-based package for determining earthquake first-motion polarity",
     long_description=long_description,
@@ -58,7 +56,7 @@ setup(
         "scikit-learn==1.2.2",
         "seaborn==0.12.2"
     ],
-#     python_requires='==3.11.7',
+    python_requires='==3.11.7',
     extras_require={
         "docs": ["sphinx", "ipython", "runipy"]
     }
