@@ -1,11 +1,17 @@
-#First download Texas testing data from 
-#https://mega.nz/file/chxx1Z5Y#zXNRKT5aeNy7AGREKEUIq71TREK8hcUyXA1ZOkQ9DlM
-#to the local directory: ../data/
-
 ## Import data
+#polall is polarity label from Texas (Size: 22980x1)
+#datall is 600-sample waveform data (Z-component) from Texas (Size: 22980 x 600 x 1); the waveform is centered by P-arrival (manual from Texas analysts) sample
+
 import numpy as np
-datall = np.load('../data/TexasData/datall_Texas.npy')
+
+# datall_Texas.npy can also be downloaded from https://mega.nz/file/chxx1Z5Y#zXNRKT5aeNy7AGREKEUIq71TREK8hcUyXA1ZOkQ9DlM
+# datall = np.load('../data/TexasData/datall_Texas.npy') 
 polall = np.load('../data/TexasData/polall_Texas.npy')
+
+data=[]
+for ii in range(6):
+    data.append(np.load('../data/TexasData/datall_Texas%d.npy'%(ii+1)))
+datall=np.concatenate(data,axis=0)
 
 ## Load EQpolarity model
 from eqpolarity.utils import construct_model
@@ -14,7 +20,7 @@ model=construct_model(input_shape)
 model.summary()
 
 ## Load pre-trained model for prediction
-model.load_weights('models/best_weigths_Binary_SCSN_Best.h5')
+model.load_weights('../models/best_weigths_Binary_SCSN_Best.h5')
 out = model.predict(datall,batch_size=1024, verbose=1)
 
 ## Applying threshold
@@ -81,7 +87,7 @@ x = datall[ind]
 y = polall[ind]
 
 model.compile(optimizer=tf.keras.optimizers.Adam(0.001), loss=['binary_crossentropy'], metrics=['acc'])
-model.load_weights('../models/best_weigths_Binary_SCSN_Best.h5')
+model.load_weights('../../models/best_weigths_Binary_SCSN_Best.h5')
 
 model.fit(x, y, batch_size=128, epochs=50, verbose =1, validation_split=0.1, shuffle=True, callbacks=[checkpoint,lr_reducer])
 
