@@ -87,7 +87,7 @@ x = datall[ind]
 y = polall[ind]
 
 model.compile(optimizer=tf.keras.optimizers.Adam(0.001), loss=['binary_crossentropy'], metrics=['acc'])
-model.load_weights('../../models/best_weigths_Binary_SCSN_Best.h5')
+model.load_weights('../models/best_weigths_Binary_SCSN_Best.h5')
 
 model.fit(x, y, batch_size=128, epochs=50, verbose =1, validation_split=0.1, shuffle=True, callbacks=[checkpoint,lr_reducer])
 
