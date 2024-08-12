@@ -34,13 +34,22 @@ BibTeX:
 -----------
 
 ## Install
-First set up the environment and install the dependency packages
+First set up the environment and install the dependency packages (tested on CPU machine)
 
 	conda create -n eqp python=3.11.7
 	conda activate eqp
 	conda install ipython notebook
 	pip install matplotlib==3.8.0 tensorflow==2.14.0 scikit-learn==1.2.2 seaborn==0.13.2 
-	
+
+Or, on machine with a GPU setup, use the following commands
+
+	conda create -n eqp python=3.10.14
+	conda activate eqp
+	conda install ipython notebook
+	pip install matplotlib==3.8.0 tensorflow==2.11.0 scikit-learn==1.2.2 seaborn==0.13.2 
+ 	conda install -c anaconda cudnn==8.2.1
+Make sure LD_LIBRARY_PATH includes ~/anaconda3/envs/eqp/lib (libcudnn.so.8)
+ 
 Then install eqpolarity using the latest version
 
     git clone https://github.com/chenyk1990/eqpolarity
