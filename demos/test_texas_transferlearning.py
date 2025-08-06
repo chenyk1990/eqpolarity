@@ -4,7 +4,7 @@
 
 import numpy as np
 
-# datall_Texas.npy can also be downloaded from https://mega.nz/file/chxx1Z5Y#zXNRKT5aeNy7AGREKEUIq71TREK8hcUyXA1ZOkQ9DlM
+# datall_Texas.npy can also be downloaded from https://github.com/chenyk1990/eqpolarity/tree/main/data/TexasData, and concatenated to one file: datall_Texas.npy
 # datall = np.load('../data/TexasData/datall_Texas.npy') 
 polall = np.load('../data/TexasData/polall_Texas.npy')
 

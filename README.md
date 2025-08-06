@@ -67,7 +67,7 @@ Or using pip directly from Github
 -----------
 ## Examples
 # Texas Data Example
-https://mega.nz/file/chxx1Z5Y#zXNRKT5aeNy7AGREKEUIq71TREK8hcUyXA1ZOkQ9DlM
+https://github.com/chenyk1990/eqpolarity/tree/main/data/TexasData
 
 -----------
 ## Development
